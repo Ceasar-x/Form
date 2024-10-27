@@ -483,10 +483,3 @@ form{
         height: 19%;
     }
 }
-@media screen and (max-width: 1600px) {
-    #former{
-        width: 95%;
-        
-    }
-    
-}
