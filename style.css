@@ -400,6 +400,9 @@ form{
         width: 97%;
         margin: auto;
     }
+    #checkerror{
+        font-size: 13px;
+    }
     #formcontainer{
         height: 60%;
         width: 90%;
