@@ -33,14 +33,18 @@ function submitForm(event) {
     else if (phone.value == "") {
         phoneError.innerHTML = "Enter your Phonenumber" ;
         phoneError.style.color = "red";
-    }else if ((phone.value).length > 11 ||  (phone.value).length < 11 ) {
+    }else if (!(phone.value).length == 11) {
         phoneError.innerHTML = "Enter a valid Phonenumber" ;
-        phoneError.style.color = "red";
-    }else if((phone.value).startsWith("080") || (phone.value).startsWith('080')  || (phone.value).startsWith('090') && (phone.value).length == 11) {
+        phoneError.style.color = "red" ;
+    }else if ((phone.value).length == 11) {
+        phoneError.innerHTML = "Valid ✔" ;
+       phoneError.style.color = "green"
+   }
+    else if((phone.value).startsWith("080") || (phone.value).startsWith('080')  || (phone.value).startsWith('090') && (phone.value).length == 11) {
         phoneError.innerHTML = "Valid ✔" ;
         phoneError.style.color = "green"
     }else {
-         phoneError.innerHTML = "Enter a valid Phonenumber" ;
+        phoneError.innerHTML = "Enter a valid Phonenumber" ;
         phoneError.style.color = "red" ;
     }
     if (eMail.value == "" || (eMail.value).length == 0) {
@@ -71,10 +75,16 @@ function submitForm(event) {
     if (!paSS.value == pAss.value) {
         pAssError.innerHTML = "Pass word does not match" ;
         pAssError.style.color = "red" ;
-    }else if (paSS.value == pAss.value) {
-        pAssError.innerHTML = "Valid ✔" ;
-        pAssError.style.color = "green" ;
-    }else{
+    }
+    else if (paSS.value == pAss.value) {
+        pAssError.innerHTML = "" ;
+        // pAssError.style.color = "green" ;
+    }
+     else if ((paSS.value).length == 0){
+        pAssError.innerHTML = "Please enter your Passsword" ;
+        pAssError.style.color = "red" ;
+        }
+    else{
         pAssError.innerHTML = "Pass word does not match" ;
         pAssError.style.color = "red" ;
     }
